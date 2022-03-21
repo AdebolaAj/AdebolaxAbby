@@ -12,3 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+def users_capital(state_dict):
+  correct = {"NY": "Albany", "CA": "Sacramento", "MI": "Lansing", "MD": "Annapolis", "TX": "Austin"}
+  score = {}
+  for key in state_dict:
+    if state_dict[key] == correct[key]:
+      score[key] = "Right"
+    else:
+      score[key] = 'Wrong'
+      
+      
+  return score

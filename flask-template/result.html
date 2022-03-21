@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Results</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
+    <h1>Capital Quiz Feedback!</h1>
+    <p>For New York's capital, your answer was {{score['NY']}}</p>
+    <p>For Carlifornia's capital, your answer was {{score['CA']}}</p>
+     <p>For Michigan's capital, your answer was {{score['MI']}}</p>
+     <p>For Maryland's capital, your answer was {{score['MD']}}</p>
+     <p>For Texas's capital, your answer was {{score['TX']}}</p>
+    
+    
+    <h1>Your Score</h2>
+    {% set score_count = 0 %}
+    {% for key in score %}
+      {% if score[key] == "Right" %}
+        {% set score_count = score_count + 1 %}
+        <p> You got 1 point for knowing {{key}} </p>
+      {%endif%}
+    {% endfor %}
+    <h3>Your percentage is {{score_count}} </h3>
+
+
+
+
+
+    
+  </body>
+</html>
