@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{% block body %}
+    <h1>Capital Quiz Feedback!</h1>
+    <p>For New York's capital, your answer was {{score['NY']}}</p>
+    <p>For Carlifornia's capital, your answer was {{score['CA']}}</p>
+     <p>For Michigan's capital, your answer was {{score['MI']}}</p>
+     <p>For Maryland's capital, your answer was {{score['MD']}}</p>
+     <p>For Texas's capital, your answer was {{score['TX']}}</p>
+    
+    
+    <h1>Your Score</h2>
+    
+    {% for key in score %}
+      {% if score[key] == "Right" %}
+        <p> You got 1 point for knowing {{key}} </p> 
+      {%endif%}
+    {% endfor %}
+    <h3>Your percentage is {{grade}}% </h3>
+
+    <h1>Faith</h1>
+    {% if passed_grade == "Fail"%}
+        <p>
+          Sorry, you didnt get it all right.
+          <a href ="/"> Click here to start again </a>
+        </p>
+    {% else %}
+        <p>Great Job, you passed all</p>
+    {% endif %}
+
+{% endblock %}
+
+
+
+
+
+    
+  </body>
+</html>
